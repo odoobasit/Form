@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.candidate-input {
+  @apply bg-gray-50 border border-custom-blue-100 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white w-full;
+}
+.candidate-normal-input {
+  @apply bg-gray-50 border text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+}
+.candidate-paragraph {
+  @apply text-gray-500 font-bold py-2;
+}
+.candidate-buttons {
+  @apply border-2 border-green-600 w-64 rounded hover:bg-green-600 text-gray-700 py-2;
+}

@@ -4,185 +4,202 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
   </head>
   <body>
     <div
-      class="flex flex-col md:max-w-7xl w-full gap-6 mx-auto my-20"
+      class="flex flex-col md:max-w-7xl w-full gap-6 mx-auto my-10"
       id="main"
     >
-      <h1 class="text-5xl font-bold text-green-600 sm:text-7xl">
-        New Candidate
-      </h1>
-      <p class="text-gray-500 text-1xl">
-        <i
-          >Fields with a green outline are included in Territory Checks
-          submissions</i
-        >
-      </p>
-      <div class="flex flex-col gap-[15px] sm:flex-row sm:gap-[35px]">
-        <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            Primary Candidate First Name
-          </p>
-          <input
-            type="text"
-            id="first_name"
-            class="bg-gray-50 border border-green-600 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-            required
-          />
-        </div>
-        <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            Primary Candidate Last Name*
-          </p>
-          <input
-            type="text"
-            id="first_name"
-            class="bg-gray-50 border border-green-600 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-            required
-          />
-        </div>
-      </div>
-      <div class="flex flex-col gap-[15px] sm:flex-row sm:gap-[35px]">
-        <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            Primary Candidate Phone Number
-          </p>
-          <input
-            type="text"
-            id="first_name"
-            class="bg-gray-50 border border-green-600 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-            required
-          />
-        </div>
-        <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            Primary Candidate Email
-          </p>
-          <input
-            type="text"
-            id="first_name"
-            class="bg-gray-50 border border-green-600 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-            required
-          />
-        </div>
-      </div>
-      <button
-        class="border-2 border-green-600 w-64 rounded hover:bg-green-600 text-gray-700 py-2"
-      >
-        ADD ADDITIONAL CONTACTS
-      </button>
-      <h1 class="text-2xl font-bold text-green-600">Requested Territory</h1>
-      <div class="flex flex-col gap-[15px] sm:flex-row sm:gap-[35px]">
-        <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            City*
-          </p>
-          <input
-            type="text"
-            id="first_name"
-            class="bg-gray-50 border border-green-600 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white mr-2"
-            required
-          />
-        </div>
-        <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            State / Province*
-          </p>
-          <select
-            id="countries"
-            class="bg-gray-50 border border-green-600 text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white mr-2"
+      <div id="heading">
+        <h1 class="text-5xl font-bold text-custom-blue sm:text-7xl">
+          New Candidate
+        </h1>
+        <p class="text-gray-500 text-1xl">
+          <i
+            >Fields with a green outline are included in Territory Checks
+            submissions</i
           >
-            <script>
-              let countriesSelect = document.getElementById("countries");
-
-              // Fetch data from REST Countries API
-              fetch("https://restcountries.com/v3.1/all")
-                .then((response) => response.json())
-                .then((data) => {
-                  // Populate select dropdown with countries
-                  countriesSelect.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
-                  data.forEach((country) => {
-                    countriesSelect.innerHTML += `<option class="font-bold" value="${country.name.common}">${country.name.common}</option>`;
-                  });
-                })
-                .catch((error) =>
-                  console.error("Error fetching countries:", error)
-                );
-            </script>
-          </select>
-        </div>
-        <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            Zip / Postal Code
-          </p>
-          <input
-            type="text"
-            id="first_name"
-            class="bg-gray-50 border border-green-600 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-            required
-          />
-        </div>
-      </div>
-      <div class="flex flex-col w-full">
-        <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-          Territory Notes
         </p>
-        <input
-          type="text"
-          id="first_name"
-          class="bg-gray-50 border border-green-600 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white w-full"
-          required
-        />
       </div>
-      <button
-        class="border-2 border-green-600 w-64 rounded hover:bg-green-600 text-gray-700 py-2"
-      >
-        ADD ADDITIONAL TERRITORY
-      </button>
-      <p class="text-2xl font-bold text-green-600">Current Address</p>
-      <label>
-        <input type="checkbox" class="accent-green-600" />
-        <text class="text-gray-500 font-bold first-letter:text-1xl"
-          >Same as Territory Requested.</text
-        >
-      </label>
-      <div class="flex flex-col gap-[15px] sm:flex-row sm:gap-[35px]">
+      <div id="first-row">
+        <div class="flex flex-col gap-[15px] sm:flex-row sm:gap-[35px]">
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">Primary Candidate First Name</p>
+            <input
+              type="text"
+              id="first_name"
+              class="candidate-input"
+              required
+            />
+          </div>
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">Primary Candidate Last Name*</p>
+            <input
+              type="text"
+              id="first_name"
+              class="candidate-input"
+              required
+            />
+          </div>
+        </div>
+        <div class="flex flex-col gap-[15px] sm:flex-row sm:gap-[35px]">
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">Primary Candidate Phone Number</p>
+            <input
+              type="text"
+              id="first_name"
+              class="candidate-input"
+              required
+            />
+          </div>
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">Primary Candidate Email</p>
+            <input
+              type="text"
+              id="first_name"
+              class="candidate-input"
+              required
+            />
+          </div>
+        </div>
+        <div>
+          <button class="candidate-buttons mt-6">
+            ADD ADDITIONAL CONTACTS
+          </button>
+        </div>
+      </div>
+      <div id="2nd-row">
+        <h1 class="text-2xl font-bold text-green-600">Requested Territory</h1>
+        <div class="flex flex-col gap-[15px] sm:flex-row sm:gap-[35px]">
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">City*</p>
+            <input
+              type="text"
+              id="first_name"
+              class="candidate-input mr-2"
+              required
+            />
+          </div>
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">State / Province*</p>
+            <select
+              id="countries"
+              class="bg-gray-50 border border-green-600 text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white mr-2"
+            >
+              <script>
+                let countriesSelect = document.getElementById("countries");
+
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    countriesSelect.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((country) => {
+                      countriesSelect.innerHTML += `<option class="font-bold" value="${country.name.common}">${country.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching countries:", error)
+                  );
+              </script>
+            </select>
+          </div>
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">Zip / Postal Code</p>
+            <input
+              type="text"
+              id="first_name"
+              class="candidate-input"
+              required
+            />
+          </div>
+        </div>
         <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            City*
-          </p>
+          <p class="candidate-paragraph">Territory Notes</p>
           <input
             type="text"
             id="first_name"
-            class="bg-gray-50 border text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white mr-2"
+            class="candidate-input w-full"
             required
           />
         </div>
+        <div>
+          <button class="candidate-buttons mt-6">
+            ADD ADDITIONAL TERRITORY
+          </button>
+        </div>
+      </div>
+      <div id="3rd-row">
+        <h1 class="text-2xl font-bold text-green-600">Current Address</h1>
+        <label class="flex items-center gap-2">
+          <input type="checkbox" class="accent-green-600" />
+          <text class="text-gray-500 font-bold first-letter:text-1xl"
+            >Same as Territory Requested.</text
+          >
+        </label>
+        <div class="flex flex-col gap-[15px] sm:flex-row sm:gap-[35px]">
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">City*</p>
+            <input
+              type="text"
+              id="first_name"
+              class="candidate-normal-input mr-2"
+              required
+            />
+          </div>
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">State / Province*</p>
+            <select
+              id="cities"
+              class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white mr-2"
+            >
+              <script>
+                let citiesSelect = document.getElementById("cities");
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    citiesSelect.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((cities) => {
+                      citiesSelect.innerHTML += `<option class="font-bold" value="${cities.name.common}">${cities.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching cities:", error)
+                  );
+              </script>
+            </select>
+          </div>
+          <div class="flex flex-col w-full">
+            <p class="candidate-paragraph">Zip / Postal Code</p>
+            <input
+              type="text"
+              id="first_name"
+              class="candidate-normal-input"
+              required
+            />
+          </div>
+        </div>
         <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            State / Province*
-          </p>
+          <p class="candidate-paragraph">TimeZone</p>
           <select
-            id="cities"
-            class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white mr-2"
+            id="timeZone"
+            name="timezone"
+            class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
           >
             <script>
-              let citiesSelect = document.getElementById("cities");
+              let timeZone = document.getElementById("timeZone");
 
               // Fetch data from REST Countries API
               fetch("https://restcountries.com/v3.1/all")
                 .then((response) => response.json())
                 .then((data) => {
                   // Populate select dropdown with countries
-                  citiesSelect.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
-                  data.forEach((cities) => {
-                    citiesSelect.innerHTML += `<option class="font-bold" value="${cities.name.common}">${cities.name.common}</option>`;
+                  timeZone.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                  data.forEach((time) => {
+                    timeZone.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
                   });
                 })
                 .catch((error) =>
@@ -191,327 +208,1044 @@
             </script>
           </select>
         </div>
+        <div class="mt-5">
+          <label
+            for="message"
+            class="text-gray-500 font-bold first-letter:text-xl"
+            >About This Candidate / Email Contents</label
+          >
+          <textarea id="message" rows="10" class="candidate-input"></textarea>
+        </div>
+
         <div class="flex flex-col w-full">
-          <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-            Zip / Postal Code
-          </p>
+          <p class="candidate-paragraph">Deal Value</p>
           <input
+            name="deal-value"
             type="text"
-            id="first_name"
-            class="bg-gray-50 border text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            class="candidate-normal-input"
             required
           />
         </div>
-      </div>
-      <div class="flex flex-col w-full">
-        <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-          State / Province*
-        </p>
-        <select
-          id="timeZone"
-          class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-        >
-          <script>
-            let timeZone = document.getElementById("timeZone");
-
-            // Fetch data from REST Countries API
-            fetch("https://restcountries.com/v3.1/all")
-              .then((response) => response.json())
-              .then((data) => {
-                // Populate select dropdown with countries
-                timeZone.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
-                data.forEach((time) => {
-                  timeZone.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
-                });
-              })
-              .catch((error) => console.error("Error fetching cities:", error));
-          </script>
-        </select>
-      </div>
-
-      <label for="message" class="text-gray-500 font-bold first-letter:text-1xl"
-        >About This Candidate / Email Contents</label
-      >
-      <textarea
-        id="message"
-        rows="10"
-        class="bg-gray-50 border border-green-600 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-      ></textarea>
-      <div class="flex flex-col w-full">
-        <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-          Deal Value
-        </p>
-        <input
-          type="text"
-          id="first_name"
-          class="bg-gray-50 border text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-          required
-        />
-      </div>
-      <div class="flex flex-col w-full">
-        <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-          Lead Source Cost
-        </p>
-        <input
-          type="text"
-          id="first_name"
-          class="bg-gray-50 border text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-          required
-        />
-      </div>
-      <div class="flex flex-col w-full">
-        <p class="text-gray-500 font-bold first-letter:text-1xl py-5">
-          Close Date
-        </p>
-        <div class="relative max-w-[100%]">
-          <div
-            class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
-          >
-            <svg
-              class="w-4 h-4 text-gray-500 dark:text-gray-400"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-              />
-            </svg>
-          </div>
+        <div class="flex flex-col w-full">
+          <p class="candidate-paragraph">Lead Source Cost</p>
           <input
-            datepicker
-            datepicker-buttons
-            datepicker-autoselect-today
             type="text"
-            class="bg-gray-50 block border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Select date"
+            id="first_name"
+            class="candidate-normal-input"
+            required
           />
         </div>
-      </div>
-
-      <!-- Tab bar -->
-
-      <div class="md:flex">
-        <!-- Tabs list  -->
-        <ul
-          id="tab-list"
-          class="flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0"
-        >
-          <li>
-            <a
-              class="inline-flex items-center px-4 py-3 text-white bg-blue-700 rounded-lg active w-full dark:bg-blue-600"
-              aria-current="page"
-            >
-              <svg
-                class="w-4 h-4 me-2 text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"
-                />
-              </svg>
-              INITIAL QUALIFYING
-            </a>
-          </li>
-          <li>
-            <a
-              class="inline-flex items-center px-4 py-3 rounded-lg bg-gray-50 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
-            >
-              <svg
-                class="w-4 h-4 me-2 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"
-                />
-              </svg>
-              ZORAKLE SPOTON!
-            </a>
-          </li>
-          <li>
-            <a
-              class="inline-flex items-center px-4 py-3 rounded-lg bg-gray-50 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
-            >
-              <svg
-                class="w-4 h-4 me-2 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M18 7.5h-.423l-.452-1.09.3-.3a1.5 1.5 0 0 0 0-2.121L16.01 2.575a1.5 1.5 0 0 0-2.121 0l-.3.3-1.089-.452V2A1.5 1.5 0 0 0 11 .5H9A1.5 1.5 0 0 0 7.5 2v.423l-1.09.452-.3-.3a1.5 1.5 0 0 0-2.121 0L2.576 3.99a1.5 1.5 0 0 0 0 2.121l.3.3L2.423 7.5H2A1.5 1.5 0 0 0 .5 9v2A1.5 1.5 0 0 0 2 12.5h.423l.452 1.09-.3.3a1.5 1.5 0 0 0 0 2.121l1.415 1.413a1.5 1.5 0 0 0 2.121 0l.3-.3 1.09.452V18A1.5 1.5 0 0 0 9 19.5h2a1.5 1.5 0 0 0 1.5-1.5v-.423l1.09-.452.3.3a1.5 1.5 0 0 0 2.121 0l1.415-1.414a1.5 1.5 0 0 0 0-2.121l-.3-.3.452-1.09H18a1.5 1.5 0 0 0 1.5-1.5V9A1.5 1.5 0 0 0 18 7.5Zm-8 6a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"
-                />
-              </svg>
-              ELIGIBILITY
-            </a>
-          </li>
-          <li>
-            <a
-              class="inline-flex items-center px-4 py-3 rounded-lg bg-gray-50 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
-            >
-              <svg
-                class="w-4 h-4 me-2 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M7.824 5.937a1 1 0 0 0 .726-.312 2.042 2.042 0 0 1 2.835-.065 1 1 0 0 0 1.388-1.441 3.994 3.994 0 0 0-5.674.13 1 1 0 0 0 .725 1.688Z"
-                />
-                <path
-                  d="M17 7A7 7 0 1 0 3 7a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1V7a5 5 0 1 1 10 0v7.083A2.92 2.92 0 0 1 12.083 17H12a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1a1.993 1.993 0 0 0 1.722-1h.361a4.92 4.92 0 0 0 4.824-4H17a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3Z"
-                />
-              </svg>
-              EXPERIENCE
-            </a>
-          </li>
-          <li>
-            <a
-              class="inline-flex items-center px-4 py-3 rounded-lg cursor-not-allowed bg-gray-50 w-full dark:bg-gray-800 dark:text-gray-500"
-            >
-              <svg
-                class="w-4 h-4 me-2 text-gray-400 dark:text-gray-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z"
-                />
-              </svg>
-              WANTS</a
-            >
-          </li>
-        </ul>
-        <!-- Fist tab description -->
-        <div
-          id="initial-qualifying"
-          class="tab-content p-6 flex flex-row bg-gray-50 overflow-y-scroll h-[500px] text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
-        >
-          <h3 class="font-bold text-black dark:text-white mb-2">
-            Section Settings
-          </h3>
-          <label>
-            <input type="checkbox" class="accent-green-600" />
-            <text class="text-gray-500 font-bold first-letter:text-1xl"
-              >Hide Section</text
-            >
-          </label>
-          <label>
-            <input type="checkbox" class="accent-green-600" />
-            <text class="text-gray-500 font-bold first-letter:text-1xl"
-              >Lock Section</text
-            >
-          </label>
+        <div class="flex flex-col w-full">
+          <p class="candidate-paragraph">Close Date</p>
+          <div class="relative max-w-[100%]">
+            <input
+              type="date"
+              class="bg-gray-50 block border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Select date"
+            />
+          </div>
         </div>
-        <!-- 2nd Tab Description -->
-        <div
-          id="zorakle-spoton!"
-          class="p-6 tab-content bg-gray-50 hidden text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
-        >
-          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
-            zorakle-spoton!
-          </h3>
-          <p class="mb-2">
-            This is some placeholder content the Profile tab's associated
-            content, clicking another tab will toggle the visibility of this one
-            for the next.
-          </p>
-          <p>
-            The tab JavaScript swaps classes to control the content visibility
-            and styling.
-          </p>
-        </div>
-        <!-- 3rd Tab Description -->
-        <div
-          id="eligibility"
-          class="p-6 tab-content bg-gray-50 hidden text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
-        >
-          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
-            ELIGIBILITY
-          </h3>
-          <p class="mb-2">
-            This is some placeholder content the Profile tab's associated
-            content, clicking another tab will toggle the visibility of this one
-            for the next.
-          </p>
-          <p>
-            The tab JavaScript swaps classes to control the content visibility
-            and styling.
-          </p>
-        </div>
-        <!-- 4th Tab Description -->
-        <div
-          id="experience"
-          class="p-6 tab-content bg-gray-50 hidden text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
-        >
-          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
-            EXPERIENCE
-          </h3>
-          <p class="mb-2">
-            This is some placeholder content the Profile tab's associated
-            content, clicking another tab will toggle the visibility of this one
-            for the next.
-          </p>
-          <p>
-            The tab JavaScript swaps classes to control the content visibility
-            and styling.
-          </p>
-        </div>
-        <!-- 5th Tab Description -->
-        <div
-          id="wants"
-          class="p-6 tab-content bg-gray-50 hidden text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
-        >
-          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
-            WANTS
-          </h3>
-          <p class="mb-2">
-            This is some placeholder content the Profile tab's associated
-            content, clicking another tab will toggle the visibility of this one
-            for the next.
-          </p>
-          <p>
-            The tab JavaScript swaps classes to control the content visibility
-            and styling.
-          </p>
-        </div>
-      </div>
 
-      <script>
-        let tabList = document.querySelectorAll("#tab-list li a");
-        let tabContent = document.querySelectorAll(".tab-content");
+        <!-- Tab bar -->
 
-        tabList.forEach((tab, index) => {
-          //Adding eventlisten
-          tab.addEventListener("click", function () {
-            tabList.forEach((t) => {
-              t.classList.remove("text-white", "bg-blue-700");
-              t.classList.add("bg-gray-50");
-            });
+        <div class="md:flex mt-6">
+          <!-- Tabs list  -->
+          <ul
+            id="tab-list"
+            class="flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0"
+          >
+            <li>
+              <a
+                class="inline-flex items-center px-4 py-3 text-white bg-blue-700 rounded-lg active w-full dark:bg-blue-600"
+                aria-current="page"
+              >
+                <svg
+                  class="w-4 h-4 me-2 text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"
+                  />
+                </svg>
+                INITIAL QUALIFYING
+              </a>
+            </li>
+            <li>
+              <a
+                class="inline-flex items-center px-4 py-3 rounded-lg bg-gray-50 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+              >
+                <svg
+                  class="w-4 h-4 me-2 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"
+                  />
+                </svg>
+                ZORAKLE SPOTON!
+              </a>
+            </li>
+            <li>
+              <a
+                class="inline-flex items-center px-4 py-3 rounded-lg bg-gray-50 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+              >
+                <svg
+                  class="w-4 h-4 me-2 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M18 7.5h-.423l-.452-1.09.3-.3a1.5 1.5 0 0 0 0-2.121L16.01 2.575a1.5 1.5 0 0 0-2.121 0l-.3.3-1.089-.452V2A1.5 1.5 0 0 0 11 .5H9A1.5 1.5 0 0 0 7.5 2v.423l-1.09.452-.3-.3a1.5 1.5 0 0 0-2.121 0L2.576 3.99a1.5 1.5 0 0 0 0 2.121l.3.3L2.423 7.5H2A1.5 1.5 0 0 0 .5 9v2A1.5 1.5 0 0 0 2 12.5h.423l.452 1.09-.3.3a1.5 1.5 0 0 0 0 2.121l1.415 1.413a1.5 1.5 0 0 0 2.121 0l.3-.3 1.09.452V18A1.5 1.5 0 0 0 9 19.5h2a1.5 1.5 0 0 0 1.5-1.5v-.423l1.09-.452.3.3a1.5 1.5 0 0 0 2.121 0l1.415-1.414a1.5 1.5 0 0 0 0-2.121l-.3-.3.452-1.09H18a1.5 1.5 0 0 0 1.5-1.5V9A1.5 1.5 0 0 0 18 7.5Zm-8 6a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"
+                  />
+                </svg>
+                ELIGIBILITY
+              </a>
+            </li>
+            <li>
+              <a
+                class="inline-flex items-center px-4 py-3 rounded-lg bg-gray-50 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+              >
+                <svg
+                  class="w-4 h-4 me-2 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M7.824 5.937a1 1 0 0 0 .726-.312 2.042 2.042 0 0 1 2.835-.065 1 1 0 0 0 1.388-1.441 3.994 3.994 0 0 0-5.674.13 1 1 0 0 0 .725 1.688Z"
+                  />
+                  <path
+                    d="M17 7A7 7 0 1 0 3 7a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1V7a5 5 0 1 1 10 0v7.083A2.92 2.92 0 0 1 12.083 17H12a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1a1.993 1.993 0 0 0 1.722-1h.361a4.92 4.92 0 0 0 4.824-4H17a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3Z"
+                  />
+                </svg>
+                EXPERIENCE
+              </a>
+            </li>
+            <li>
+              <a
+                class="inline-flex items-center px-4 py-3 rounded-lg cursor-not-allowed bg-gray-50 w-full dark:bg-gray-800 dark:text-gray-500"
+              >
+                <svg
+                  class="w-4 h-4 me-2 text-gray-400 dark:text-gray-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z"
+                  />
+                </svg>
+                WANTS</a
+              >
+            </li>
+          </ul>
+          <!-- Fist tab description -->
+          <div
+            id="initial-qualifying"
+            class="tab-content p-6 flex flex-col bg-gray-50 overflow-y-scroll h-[500px] text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+          >
+            <div class="flex justify-between flex-col sm:flex-row">
+              <div>
+                <h3 class="font-bold text-black dark:text-white mb-2">
+                  Section Settings
+                </h3>
+              </div>
 
-            tabContent.forEach((content, contentIndex) => {
-              if (index === contentIndex) {
-                content.classList.remove("hidden");
-                tab.classList.add("text-white", "bg-blue-700");
-                tab.classList.remove("bg-gray-50");
-              } else {
-                content.classList.add("hidden");
-              }
+              <div>
+                <label class="items-center gap-2">
+                  <input
+                    type="checkbox"
+                    class="accent-green-600"
+                    name="hide-section"
+                  />
+                  <text class="text-gray-500 font-bold first-letter:text-1xl"
+                    >Hide Section</text
+                  >
+                </label>
+                <label class="items-center gap-2">
+                  <input
+                    type="checkbox"
+                    class="accent-green-600"
+                    name="lock-section"
+                  />
+                  <text class="text-gray-500 font-bold first-letter:text-1xl"
+                    >Lock Section</text
+                  >
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="font-bold text-green-600 py-2">
+                How much money are you wanting to invest in the franchise?
+              </p>
+            </div>
+            <select
+              name="How much money are you wanting to invest in the franchise?"
+              id="money"
+              class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            >
+              <script>
+                let money = document.getElementById("money");
+
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    money.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((time) => {
+                      money.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching cities:", error)
+                  );
+              </script>
+            </select>
+            <div>
+              <p class="text-xs font-bold text-gray-500 mt-2">
+                Used as Maximum Investment
+              </p>
+            </div>
+
+            <div>
+              <p class="candidate-paragraph">Do you have a need for funding?</p>
+            </div>
+            <select
+              name="Do you have a need for funding?"
+              id="funding"
+              class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            >
+              <script>
+                let funding = document.getElementById("funding");
+
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    funding.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((time) => {
+                      funding.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching cities:", error)
+                  );
+              </script>
+            </select>
+            <div>
+              <p class="candidate-paragraph">
+                What is your approximate credit score?
+              </p>
+            </div>
+            <select
+              name="What is your approximate credit score?"
+              id="score"
+              class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            >
+              <script>
+                let score = document.getElementById("score");
+
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    score.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((time) => {
+                      score.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching cities:", error)
+                  );
+              </script>
+            </select>
+            <div>
+              <p class="font-bold text-green-600 py-2">Net Worth?</p>
+            </div>
+            <select
+              name="Net Worth?"
+              id="worth"
+              class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            >
+              <script>
+                let worth = document.getElementById("worth");
+
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    worth.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((time) => {
+                      worth.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching cities:", error)
+                  );
+              </script>
+            </select>
+            <div>
+              <p class="font-bold text-green-600 py-2">Liquid Cash?</p>
+            </div>
+            <select
+              name="Liquid Cash?"
+              id="liquid-cash"
+              class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            >
+              <script>
+                let liquid = document.getElementById("liquid-cash");
+
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    liquid.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((time) => {
+                      liquid.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching cities:", error)
+                  );
+              </script>
+            </select>
+            <div>
+              <p class="candidate-paragraph">
+                What caused you to start looking for a franchise?
+              </p>
+            </div>
+            <select
+              name="What caused you to start looking for a franchise?"
+              id="franchise"
+              class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            >
+              <script>
+                let franchise = document.getElementById("franchise");
+
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    franchise.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((time) => {
+                      franchise.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching cities:", error)
+                  );
+              </script>
+            </select>
+            <div>
+              <p class="candidate-paragraph">
+                What is your professional background?
+              </p>
+            </div>
+            <select
+              name=" What is your professional background?"
+              id="background"
+              class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            >
+              <script>
+                let background = document.getElementById("background");
+
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    background.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((time) => {
+                      background.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching cities:", error)
+                  );
+              </script>
+            </select>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                What franchises are you interested in?
+              </p>
+              <input
+                type="text"
+                name="What franchises are you interested in?"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div>
+              <p class="candidate-paragraph">What is your time frame?</p>
+            </div>
+            <select
+              name="What is your time frame?"
+              id="time-frame"
+              class="bg-gray-50 border text-green-600 font-bold text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            >
+              <script>
+                let tFrame = document.getElementById("time-frame");
+
+                // Fetch data from REST Countries API
+                fetch("https://restcountries.com/v3.1/all")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // Populate select dropdown with countries
+                    tFrame.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                    data.forEach((time) => {
+                      tFrame.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                    });
+                  })
+                  .catch((error) =>
+                    console.error("Error fetching cities:", error)
+                  );
+              </script>
+            </select>
+            <div class="mt-4">
+              <label
+                for="message"
+                class="text-gray-500 font-bold first-letter:text-xl"
+                >Notes</label
+              >
+              <textarea
+                id="message"
+                rows="3"
+                class="candidate-input"
+              ></textarea>
+            </div>
+            <div>
+              <button class="candidate-buttons mt-6">SAVE</button>
+            </div>
+          </div>
+
+          <!-- 2nd Tab Description -->
+          <div
+            id="zorakle-spoton!"
+            class="p-6 tab-content bg-gray-50 hidden text-medium overflow-y-scroll h-[500px] text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+          >
+            <div>
+              <div>
+                <p class="font-bold text-green-600 py-2">Competency 1?</p>
+              </div>
+              <select
+                name="Competency 1?"
+                id="competency1"
+                class="bg-gray-50 border text-green-600 font-bold text-sm w-full rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              >
+                <script>
+                  let competency1 = document.getElementById("competency1");
+
+                  // Fetch data from REST Countries API
+                  fetch("https://restcountries.com/v3.1/all")
+                    .then((response) => response.json())
+                    .then((data) => {
+                      // Populate select dropdown with countries
+                      competency1.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                      data.forEach((time) => {
+                        competency1.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                      });
+                    })
+                    .catch((error) =>
+                      console.error("Error fetching cities:", error)
+                    );
+                </script>
+              </select>
+            </div>
+            <div>
+              <div>
+                <p class="font-bold text-green-600 py-2">Competency 2?</p>
+              </div>
+              <select
+                name="Competency 2?"
+                id="competency2"
+                class="bg-gray-50 border text-green-600 font-bold text-sm w-full rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              >
+                <script>
+                  let competency2 = document.getElementById("competency2");
+
+                  // Fetch data from REST Countries API
+                  fetch("https://restcountries.com/v3.1/all")
+                    .then((response) => response.json())
+                    .then((data) => {
+                      // Populate select dropdown with countries
+                      competency2.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                      data.forEach((time) => {
+                        competency2.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                      });
+                    })
+                    .catch((error) =>
+                      console.error("Error fetching cities:", error)
+                    );
+                </script>
+              </select>
+            </div>
+            <div>
+              <div>
+                <p class="font-bold text-green-600 py-2">Competency 3?</p>
+              </div>
+              <select
+                name="Competency 3?"
+                id="competency3"
+                class="bg-gray-50 border text-green-600 font-bold text-sm w-full rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              >
+                <script>
+                  let competency3 = document.getElementById("competency3");
+
+                  // Fetch data from REST Countries API
+                  fetch("https://restcountries.com/v3.1/all")
+                    .then((response) => response.json())
+                    .then((data) => {
+                      // Populate select dropdown with countries
+                      competency3.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                      data.forEach((time) => {
+                        competency3.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                      });
+                    })
+                    .catch((error) =>
+                      console.error("Error fetching cities:", error)
+                    );
+                </script>
+              </select>
+            </div>
+            <div>
+              <div>
+                <p class="font-bold text-green-600 py-2">Stage of Growth</p>
+              </div>
+              <select
+                name="Stage of Growth"
+                id="stage-of-growth"
+                class="bg-gray-50 border text-green-600 font-bold text-sm w-full rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              >
+                <script>
+                  let stageofGrowth =
+                    document.getElementById("stage-of-growth");
+
+                  // Fetch data from REST Countries API
+                  fetch("https://restcountries.com/v3.1/all")
+                    .then((response) => response.json())
+                    .then((data) => {
+                      // Populate select dropdown with countries
+                      stageofGrowth.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                      data.forEach((time) => {
+                        stageofGrowth.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                      });
+                    })
+                    .catch((error) =>
+                      console.error("Error fetching cities:", error)
+                    );
+                </script>
+              </select>
+            </div>
+            <div>
+              <div>
+                <p class="candidate-paragraph">Value</p>
+              </div>
+              <select
+                name="Value"
+                id="value"
+                class="bg-gray-50 border text-green-600 font-bold text-sm w-full rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              >
+                <script>
+                  let value = document.getElementById("value");
+
+                  // Fetch data from REST Countries API
+                  fetch("https://restcountries.com/v3.1/all")
+                    .then((response) => response.json())
+                    .then((data) => {
+                      // Populate select dropdown with countries
+                      value.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                      data.forEach((time) => {
+                        value.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                      });
+                    })
+                    .catch((error) =>
+                      console.error("Error fetching cities:", error)
+                    );
+                </script>
+              </select>
+            </div>
+            <div>
+              <p class="candidate-paragraph">
+                Emulator - Motivated by an insatiable desire for success, they
+                are driven to do whatever it takes to conquer a challenge.
+                Recognition and money defines success for Emulators. They prefer
+                prestigious, progressive concepts that offer heroic, innovative
+                solutions for their clients. They are independent thinkers and
+                require a high degree of flexibility. Belonger - Hands-on
+                business builder focused on long-term relationships and customer
+                satisfaction. Motivated by a deeply rooted moral code they are
+                hardworking and committed to providing for and protecting their
+                loved ones. Family and security defines success for the
+                Belonger. They favor proven, practical service or solution-based
+                businesses. Achiever - A tenacious business builder, never
+                satisfied until they dominate the market. Motivated by
+                accomplishment, they have a goal-oriented lifestyles and a deep
+                commitment to success. Results, respect and control define
+                success for the Achiever. They prefer unique, scalable, quality
+                service and business-to-business or solution-oriented concepts.
+                Societal - A visionary business builder committed to edify,
+                inspire and change the world. Motivated to have an impact on
+                others using their expertise, experience and education.
+                Contribution and freedom defines success for the Societal. They
+                prefer innovative, change, or cause-based concepts that promote
+                others' growth and success.
+              </p>
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                What work activities do you enjoy?
+              </p>
+              <input
+                name="What work activities do you enjoy?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Are you comfortable attending networking functions to promote
+                your new business?
+              </p>
+              <input
+                name="Are you comfortable attending networking functions to promote your new business?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Are you interested in Multiple-Unit Operation or Masters?
+              </p>
+              <input
+                name="Are you interested in Multiple-Unit Operation or Masters?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Are you planning on having a partner in the business?
+              </p>
+              <input
+                name="Are you planning on having a partner in the business?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                How does your family feel about your interest in this?
+              </p>
+              <input
+                name="How does your family feel about your interest in this?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                What types of employees would you prefer to work with (if any)?
+              </p>
+              <input
+                name="What types of employees would you prefer to work with (if any)?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                What size staff are you comfortable with?
+              </p>
+              <input
+                name="What size staff are you comfortable with?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="mt-5">
+              <label
+                for="message"
+                class="text-gray-500 font-bold first-letter:text-xl"
+                >Summary / Notes</label
+              >
+              <textarea
+                id="message"
+                rows="10"
+                class="candidate-input"
+              ></textarea>
+            </div>
+            <div>
+              <button class="candidate-buttons mt-6">SAVE</button>
+            </div>
+          </div>
+          <!-- 3rd Tab Description -->
+          <div
+            id="eligibility"
+            class="p-6 tab-content bg-gray-50 hidden text-medium overflow-y-scroll h-[500px] text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+          >
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                How do you plan on funding the business?
+              </p>
+              <input
+                name="How do you plan on funding the business?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                What is the value of your 401k/IRA?
+              </p>
+              <input
+                name="What is the value of your 401k/IRA?"
+                type="number"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div>
+              <div>
+                <p class="candidate-paragraph">
+                  Have you been in the military or could you qualify for a VA
+                  loan? Do you qualify for any of these discounts
+                </p>
+              </div>
+              <select
+                name="Have you been in the military or could you qualify for a VA loan? Do you qualify for any of these discounts"
+                id="Qualify"
+                class="bg-gray-50 border text-green-600 font-bold text-sm w-full rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              >
+                <script>
+                  let qualify = document.getElementById("Qualify");
+
+                  // Fetch data from REST Countries API
+                  fetch("https://restcountries.com/v3.1/all")
+                    .then((response) => response.json())
+                    .then((data) => {
+                      // Populate select dropdown with countries
+                      qualify.innerHTML = `<option class="font-bold" selected>Choose a country</option>`;
+                      data.forEach((time) => {
+                        qualify.innerHTML += `<option class="font-bold" value="${time.name.common}">${time.name.common}</option>`;
+                      });
+                    })
+                    .catch((error) =>
+                      console.error("Error fetching cities:", error)
+                    );
+                </script>
+              </select>
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Is your current net worth over $500,000? If not, what is your
+                current net worth?
+              </p>
+              <input
+                name="Is your current net worth over $500,000? If not, what is your current net worth?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col">
+              <p class="candidate-paragraph">
+                Have you or your spouse ever been convicted of something other
+                than a minor traffic violation?
+              </p>
+              <ul class="flex">
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Have you or your spouse ever been convicted of something other
+                    than a minor traffic violation?"
+                    value="true"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Have you or your spouse ever been convicted of something other
+                  than a minor traffic violation?_yes"
+                    >Yes</label
+                  >
+                </li>
+                <li class="flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Have you or your spouse ever been convicted of something other
+                    than a minor traffic violation?"
+                    value="false"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Have you or your spouse ever been convicted of something other
+                  than a minor traffic violation?_no"
+                    >No</label
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-col">
+              <p class="candidate-paragraph">
+                Are you or your spouse subject to a pending litigation or
+                unsatisfied judgment?
+              </p>
+              <ul class="flex">
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Are you or your spouse subject to a pending litigation or unsatisfied judgment?"
+                    value="true"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Are you or your spouse subject to a pending litigation or unsatisfied judgment?_yes"
+                    >Yes</label
+                  >
+                </li>
+                <li class="flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Are you or your spouse subject to a pending litigation or unsatisfied judgment?"
+                    value="false"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Are you or your spouse subject to a pending litigation or unsatisfied judgment?_no"
+                    >No</label
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Have you or your spouse ever declared bankruptcy? If yes, when
+                was it discharged?
+              </p>
+              <input
+                name="Have you or your spouse ever declared bankruptcy? If yes, when was it discharged?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="mt-5">
+              <label
+                for="message"
+                class="text-gray-500 font-bold first-letter:text-xl"
+                >Notes</label
+              >
+              <textarea
+                id="message"
+                rows="10"
+                class="candidate-input"
+              ></textarea>
+            </div>
+            <div>
+              <button class="candidate-buttons mt-6">SAVE</button>
+            </div>
+          </div>
+          <!-- 4th Tab Description -->
+          <div
+            id="experience"
+            class="p-6 tab-content bg-gray-50 hidden overflow-y-scroll h-[500px] text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+          >
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Have you ever owned a business before?
+              </p>
+              <input
+                name="Have you ever owned a business before?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Do you have any marketing experience?
+              </p>
+              <input
+                name="Do you have any marketing experience?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Do you have any management experience?
+              </p>
+              <input
+                name="Do you have any management experience?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">Do you have sales experience?</p>
+              <input
+                name="Do you have sales experience?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Do you have experience in reviewing financial statements?
+              </p>
+              <input
+                name="Do you have experience in reviewing financial statements?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                Do you have customer service and account management experience?
+              </p>
+              <input
+                name="Do you have customer service and account management experience?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div>
+              <button class="candidate-buttons mt-6">SAVE</button>
+            </div>
+          </div>
+          <!-- 5th Tab Description -->
+          <div
+            id="wants"
+            class="p-6 tab-content bg-gray-50 hidden overflow-y-scroll h-[500px] text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+          >
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                What do you find most attractive about being a business owner?
+              </p>
+              <input
+                name="What do you find most attractive about being a business owner?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="candidate-paragraph">
+                From your past experience is there anything you prefer not to
+                handle with your new business?
+              </p>
+              <input
+                name="From your past experience is there anything you prefer not to handle with your new business?"
+                type="text"
+                class="candidate-normal-input"
+                required
+              />
+            </div>
+            <div class="mt-5">
+              <label
+                for="message"
+                class="text-gray-500 font-bold first-letter:text-xl"
+                >What are your expectations from the business? What type of
+                lifestyle are you looking to achieve?</label
+              >
+              <textarea
+                id="message"
+                rows="10"
+                class="candidate-input"
+              ></textarea>
+            </div>
+
+            <div class="flex flex-col">
+              <p class="candidate-paragraph">Do you prefer B2B or B2C?</p>
+              <ul class="flex">
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Do you prefer B2B or B2C?"
+                    value="true"
+                  />
+                  <label class="mb-2 block" for="Do you prefer B2B or B2C?_yes"
+                    >Yes</label
+                  >
+                </li>
+                <li class="flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Do you prefer B2B or B2C?"
+                    value="false"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Do you prefer B2B or B2C?
+                    
+                    _no"
+                    >No</label
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          let tabList = document.querySelectorAll("#tab-list li a");
+          let tabContent = document.querySelectorAll(".tab-content");
+
+          tabList.forEach((tab, index) => {
+            //Adding eventlisten
+            tab.addEventListener("click", function () {
+              tabList.forEach((t) => {
+                t.classList.remove("text-white", "bg-blue-700");
+                t.classList.add("bg-gray-50");
+              });
+
+              tabContent.forEach((content, contentIndex) => {
+                if (index === contentIndex) {
+                  content.classList.remove("hidden");
+                  tab.classList.add("text-white", "bg-blue-700");
+                  tab.classList.remove("bg-gray-50");
+                } else {
+                  content.classList.add("hidden");
+                }
+              });
             });
           });
-        });
-      </script>
+        </script>
+      </div>
     </div>
   </body>
 </html>
