@@ -332,7 +332,7 @@
             </li>
             <li>
               <a
-                class="inline-flex items-center px-4 py-3 rounded-lg cursor-not-allowed bg-gray-50 w-full dark:bg-gray-800 dark:text-gray-500"
+                class="inline-flex items-center px-4 py-3 rounded-lg bg-gray-50 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <svg
                   class="w-4 h-4 me-2 text-gray-400 dark:text-gray-500"
@@ -1188,35 +1188,289 @@
             </div>
 
             <div class="flex flex-col">
-              <p class="candidate-paragraph">Do you prefer B2B or B2C?</p>
+              <p class="font-bold text-green-600 py-2">
+                Do you prefer B2B or B2C?
+              </p>
               <ul class="flex">
-                <li class="mr-4 flex">
+                <li class="flex mr-4">
                   <input
                     type="radio"
                     class="mr-2"
                     name="Do you prefer B2B or B2C?"
-                    value="true"
+                    value="Both"
                   />
-                  <label class="mb-2 block" for="Do you prefer B2B or B2C?_yes"
-                    >Yes</label
-                  >
+                  <label class="mb-2 block" for="_fba_b2b1">Both</label>
+                </li>
+                <li class="flex mr-4">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Do you prefer B2B or B2C?"
+                    value="B2B"
+                  /><label class="mb-2 block" for="_fba_b2b2">B2B</label>
                 </li>
                 <li class="flex">
                   <input
                     type="radio"
                     class="mr-2"
                     name="Do you prefer B2B or B2C?"
-                    value="false"
+                    value="B2C"
+                  />
+                  <label class="mb-2 block" for="_fba_b2b3">B2C</label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col">
+              <p class="font-bold text-green-600 py-2">
+                Do you prefer a physical location or home-based business model?
+              </p>
+              <ul class="flex">
+                <li class="flex mr-4">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name=" Do you prefer a physical location or home-based business model?"
+                    value="Both"
+                  />
+                  <label class="mb-2 block" for="Both">Both</label>
+                </li>
+                <li class="flex mr-4">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name=" Do you prefer a physical location or home-based business model?"
+                    value="Home-based"
+                  /><label class="mb-2 block" for="Home-based"
+                    >Home-based</label
+                  >
+                </li>
+                <li class="flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name=" Do you prefer a physical location or home-based business model?"
+                    value="Physical"
+                  /><label class="mb-2 block" for="Physical">Physical</label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col">
+              <p class="font-bold text-green-600 py-2">
+                Would you prefer to have an inventory or service-based business
+                model?
+              </p>
+              <ul class="flex">
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="business_type"
+                    value="Both"
                   />
                   <label
                     class="mb-2 block"
-                    for="Do you prefer B2B or B2C?
+                    for=" Would you prefer to have an inventory or service-based business
+                  models_Both"
+                    >Both</label
+                  >
+                </li>
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="business_type"
+                    value="Inventory"
+                  />
+                  <label class="mb-2 block" for="type1">Inventory</label>
+                </li>
+                <li class="flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="business_type"
+                    value="Service"
+                  />
+                  <label class="mb-2 block" for="type2">Service</label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col">
+              <p class="font-bold text-green-600 py-2">
+                Are you comfortable with a business that requires cold calling?
+              </p>
+              <ul class="flex">
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Are you comfortable with a business that requires cold calling?"
+                    value="Both"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Are you comfortable with a business that requires cold calling?_Both"
+                    >Both</label
+                  >
+                </li>
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Are you comfortable with a business that requires cold calling?"
+                    value="Yes"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Are you comfortable with a business that requires cold calling?
+                    
+                    _Yes"
+                  >
+                    Yes</label
+                  >
+                </li>
+                <li class="flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Are you comfortable with a business that requires cold calling?"
+                    value="No"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Are you comfortable with a business that requires cold calling?
                     
                     _no"
                     >No</label
                   >
                 </li>
               </ul>
+            </div>
+
+            <div class="flex flex-col">
+              <p class="font-bold text-green-600 py-2">
+                Are you going to be in this business as an owner/operator or do
+                you prefer a passive model, semi-passive model? (Passive
+                Ownership means the owner is working 15 hours or less per week
+                in the business.)
+              </p>
+              <ul class="flex">
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Are you going to be in this business as an owner/operator or do you prefer a passive model, semi-passive model? (Passive Ownership means the owner is working 15 hours or less per week in the business.)"
+                    value="Owner/Operator"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Are you going to be in this business as an owner/operator or do you prefer a passive model, semi-passive model? (Passive Ownership means the owner is working 15 hours or less per week in the business.)Owner/Operator"
+                    >Owner/Operator</label
+                  >
+                </li>
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Are you going to be in this business as an owner/operator or do you prefer a passive model, semi-passive model? (Passive Ownership means the owner is working 15 hours or less per week in the business.)"
+                    value="Passive"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Are you going to be in this business as an owner/operator or do you prefer a passive model, semi-passive model? (Passive Ownership means the owner is working 15 hours or less per week in the business.)
+                    
+                    _Passive"
+                  >
+                    Passive</label
+                  >
+                </li>
+                <li class="flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Are you going to be in this business as an owner/operator or do you prefer a passive model, semi-passive model? (Passive Ownership means the owner is working 15 hours or less per week in the business.)"
+                    value="Semi"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Are you going to be in this business as an owner/operator or do you prefer a passive model, semi-passive model? (Passive Ownership means the owner is working 15 hours or less per week in the business.)
+                    
+                    _Semi"
+                    >Semi</label
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col">
+              <p class="font-bold text-green-600 py-2">
+                Is working standard business hours (9am-5pm) important to you?
+              </p>
+              <ul class="flex">
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Is working standard business hours (9am-5pm) important to you?"
+                    value="Both"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Is working standard business hours (9am-5pm) important to you?_Both"
+                    >Both</label
+                  >
+                </li>
+                <li class="mr-4 flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Is working standard business hours (9am-5pm) important to you?"
+                    value="Yes"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Is working standard business hours (9am-5pm) important to you?
+                    
+                    _Yes"
+                  >
+                    Yes</label
+                  >
+                </li>
+                <li class="flex">
+                  <input
+                    type="radio"
+                    class="mr-2"
+                    name="Is working standard business hours (9am-5pm) important to you?"
+                    value="No"
+                  />
+                  <label
+                    class="mb-2 block"
+                    for="Is working standard business hours (9am-5pm) important to you?
+                    
+                    _no"
+                    >No</label
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-5">
+              <label
+                for="message"
+                class="text-gray-500 font-bold first-letter:text-xl"
+                >Notes</label
+              >
+              <textarea
+                id="message"
+                rows="10"
+                class="candidate-input"
+              ></textarea>
+            </div>
+
+            <div>
+              <button class="candidate-buttons mt-6">SAVE</button>
             </div>
           </div>
         </div>
